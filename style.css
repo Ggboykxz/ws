@@ -71,12 +71,12 @@ header {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem; /* Augmentation légère du padding vertical */
+    padding: 0.75rem 1rem;
     background-color: rgba(238, 130, 238, 0.462);
     color: var(--dark-clr-1);
     z-index: 100;
     backdrop-filter: blur(20px);
-    height: 70px; /* Augmentation de la hauteur du header */
+    height: 70px;
 }
 
 #nav-menu {
@@ -92,13 +92,13 @@ header {
 }
 
 #logo-container {
-    max-height: 60px; /* Ajuster selon le besoin */
+    max-height: 60px;
     display: flex;
     align-items: center;
 }
 
 #logo-container img {
-    max-width: 150px; /* Ajuster selon le besoin */
+    max-width: 150px;
     max-height: 100%;
     height: auto;
     object-fit: contain;
@@ -107,12 +107,13 @@ header {
 .nav-items {
     display: flex;
     align-items: center;
+    gap: 1.5rem; /* Augmentation de l'espacement entre les boutons */
 }
 
 .nav-btn {
     background: none;
     border: none;
-    padding: 0.75rem 1rem; /* Ajuster selon le besoin */
+    padding: 0.75rem 1rem;
     cursor: pointer;
     font-size: var(--fs-1);
     color: var(--dark-clr-1);
@@ -136,7 +137,6 @@ header {
     font-size: var(--fs-2);
     color: var(--dark-clr-1);
 }
-
 #nav-menu {
     display: flex;
     gap: 1rem; /* Réduction de l'écart entre les boutons */
