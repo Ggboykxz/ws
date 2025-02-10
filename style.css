@@ -242,14 +242,8 @@ main {
 
 @keyframes cursor {
     50% { border-color: transparent; }
-}
+} 
 
-/* Media query pour les petits écrans */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: var(--fs-5); /* Réduction de la taille de police sur les petits écrans */
-    }
-}
 
 .hero-section h2 {
     font-size: var(--fs-1);
