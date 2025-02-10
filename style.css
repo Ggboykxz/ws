@@ -227,26 +227,22 @@ main {
     margin-bottom: 1rem;
     color: var(--light-clr-1);
     /* Styles pour l'animation de frappe */
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
-    margin: 0 auto; /* Centre le texte */
-    letter-spacing: .15em; /* Ajuste l'espacement des lettres */
-    /* Animation CSSAnimation.io */
-    opacity: 0; /* Le texte est initialement invisible */
-    animation: fadeIn 3s forwards; /* Applique l'animation fadeIn */
+    width: 100%; /* Largeur initiale */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #7E2EA0;
+    /* Ajout de l'animation typing */
+    animation: typing 2s steps(40, end), cursor .2s step-end infinite, fadeIn 3s forwards;
+    opacity: 0; /* Initialement invisible pour l'effet fadeIn */
 }
 
-/* Animation du curseur (reste en CSS classique) */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 
-.hero-section h1::after {
-    content: '';
-    display: inline-block;
-    width: .15em;
-    border-right: .15em solid orange;
-    animation: blink-caret .75s step-end infinite;
+@keyframes cursor {
+    50% { border-color: transparent }
 }
 
 /* fadeIn animation from CSSAnimation.io */
