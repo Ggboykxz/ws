@@ -828,56 +828,64 @@ label:has(+ input.success:focus), label:has(+ input.success) {
 
 
 
-
-
-
 /* header responsive ===================================================================== */
 
 @media (max-width: 768px) {
     header {
-        padding: 1rem;
-        height: max-content;
-        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        height: auto; /* La hauteur s'adapte au contenu */
+        flex-direction: column; /* Les éléments s'empilent verticalement */
+        align-items: flex-start; /* Alignement à gauche */
     }
-
 
     #nav-menu {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 70%;
-        height: 100vh;
-        max-width: 300px;
-        padding: 5rem 1rem 0rem 1rem;
+        display: none; /* Cache le menu par défaut */
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        transform: translateX(100%);
-        transition: transform 0.3s ease-out;
-        z-index: 1000;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        margin-top: 0.5rem;
     }
 
-    #nav-menu.active {        
-        padding: 5rem 1rem 0rem 1rem;
-        transform: translateX(0);
+    #nav-menu.active {
+        display: flex; /* Affiche le menu lorsque la classe "active" est présente */
     }
 
+    .nav-items {
+        flex-direction: column; /* Les éléments de navigation s'empilent verticalement */
+        align-items: flex-start; /* Alignement à gauche */
+        width: 100%;
+        gap: 0.5rem; /* Réduit l'espacement entre les boutons */
+    }
+
+    .nav-btn {
+        display: block; /* Les boutons prennent toute la largeur disponible */
+        width: 100%;
+        text-align: left; /* Texte aligné à gauche */
+        padding: 0.75rem;
+    }
+
+    .logo-wrapper {
+        width: 100%; /* Le conteneur du logo prend toute la largeur */
+        margin-bottom: 0.5rem; /* Ajoute un espacement en dessous du logo */
+    }
 
     .burger {
         display: block;
-        position: relative;
-    }
-
-
-    .nav-btn {
-        text-align: left;
-        padding: 1rem;
+        position: absolute;
+        top: 0.75rem;
+        right: 1rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
         font-size: var(--fs-2);
+        color: var(--dark-clr-1);
     }
-
 }
+
+
+
+
 
 
 /* footer responsive ===================================================================== */
