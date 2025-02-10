@@ -72,24 +72,26 @@ header {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: 2rem; /* Réduction de l'écart entre les éléments */
-    padding: 0.5rem 1rem; /* Réduction du padding vertical et horizontal */
+    gap: 2rem; /* Espace entre le logo et les éléments de navigation */
+    padding: 0.5rem 1rem; /* Padding réduit pour un header plus compact */
     background-color: rgba(238, 130, 238, 0.462);
     color: var(--dark-clr-1);
     z-index: 100;
     backdrop-filter: blur(20px);
+    height: 60px; /* Hauteur fixe du header */
 }
 
 #logo-container {
-    max-height: 40px; /* Réduction de la hauteur maximale du logo */
+    height: 100%; /* Le conteneur prend toute la hauteur du header */
     display: flex;
-    align-items: center;
+    align-items: center; /* Centre verticalement le logo dans le conteneur */
 }
 
 #logo-container img {
-    max-width: 120px; /* Réduction de la largeur maximale du logo */
-    max-height: 100%;
-    height: auto;
+    max-width: 120px; /* Largeur maximale du logo */
+    max-height: 80%; /* Hauteur maximale du logo (80% de la hauteur du conteneur) */
+    height: auto; /* La hauteur s'ajuste automatiquement en fonction de la largeur */
+    object-fit: contain; /* Assure que l'image est entièrement visible dans son conteneur */
 }
 
 #nav-menu {
