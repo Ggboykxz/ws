@@ -80,8 +80,15 @@ header {
     backdrop-filter: blur(20px);
 }
 
+#logo-container {
+    max-height: 50px; /* Ajustez cette valeur selon vos besoins */
+    display: flex;
+    align-items: center;
+}
+
 #logo-container img {
     max-width: 150px;
+    max-height: 100%;
     height: auto;
 }
 
@@ -706,8 +713,15 @@ label:has(+ input.success:focus), label:has(+ input.success) {
     gap: 2.5rem;
 }
 
+.footer-logo {
+    max-height: 50px; /* Ajustez cette valeur selon vos besoins */
+    display: flex;
+    align-items: center;
+}
+
 .footer-logo img {
     max-width: 150px;
+    max-height: 100%;
     height: auto;
 }
 
