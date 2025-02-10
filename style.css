@@ -187,19 +187,43 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    /* Ajout de l'image de fond */
+    background-image: url('/assets/hero-background.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* L'image couvre toute la section */
+    background-position: center; /* L'image est centrée */
+    background-repeat: no-repeat; /* L'image ne se répète pas */
+    color: var(--light-clr-1); /* Change la couleur du texte pour qu'il soit lisible sur l'image */
+    position: relative; /* Pour pouvoir utiliser un overlay */
+    overflow: hidden; /* Empêche l'image de dépasser */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Ajoute un overlay sombre pour améliorer la lisibilité du texte */
+    z-index: 1; /* Place l'overlay au-dessus de l'image et en-dessous du texte */
+}
+
+.hero-section > * {
+    z-index: 2; /* Place le contenu (texte, boutons) au-dessus de l'overlay et de l'image */
+    position: relative; /* Crée un contexte de superposition */
 }
 
 .hero-section h1 {
     font-size: var(--fs-3);
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: var(--dark-clr-1);
+    color: var(--light-clr-1); /* Assure que le titre est blanc */
 }
 
 .hero-section h2 {
     font-size: var(--fs-1);
     line-height: 1.5;
-    color: var(--dark-clr-1);
+    color: var(--light-clr-1); /* Assure que le sous-titre est blanc */
     max-width: 800px;
     margin: 0 auto;
 }
