@@ -245,11 +245,6 @@ main {
     50% { border-color: transparent }
 }
 
-/* fadeIn animation from CSSAnimation.io */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
 .hero-section h2 {
     font-size: var(--fs-1);
