@@ -229,7 +229,7 @@ main {
     /* Styles pour l'animation de frappe */
     max-width: 100%; /* Utilisation de max-width pour la responsivité */
     overflow: hidden;
-    white-space: nowrap;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne par défaut */
     border-right: 2px solid #7E2EA0;
     /* Ajout de l'animation typing */
     animation: typing 3.5s steps(40, end), cursor .2s step-end infinite;
@@ -251,9 +251,9 @@ main {
         white-space: normal; /* Permet au texte de passer à la ligne */
         overflow: visible; /* Permet au texte de s'afficher complètement */
         border-right: none; /* Supprime le curseur pour éviter les problèmes d'affichage */
+        max-height: 3.6em; /* Limite la hauteur pour deux lignes */
     }
 }
-
 
 .hero-section h2 {
     font-size: var(--fs-1);
