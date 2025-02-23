@@ -368,6 +368,40 @@ main {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    background-size: cover; /* Pour que l'image couvre toute la section */
+    background-position: center; /* Pour centrer l'image */
+}
+
+.service-1 {
+    background-image: url('/assets/service1-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-2 {
+    background-image: url('/assets/service2-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-3 {
+    background-image: url('/assets/service3-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-4 {
+    background-image: url('/assets/service4-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-5 {
+    background-image: url('/assets/service5-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-6 {
+    background-image: url('/assets/service6-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-7 {
+    background-image: url('/assets/service7-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.service-8 {
+    background-image: url('/assets/service8-background.jpg'); /* Remplacez par le chemin de votre image */
 }
 
 .service:hover {
