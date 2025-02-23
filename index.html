@@ -53,48 +53,160 @@
             display: none !important;
         }
     }
+      /* Animation d'entrée */
+    @keyframes menuEntry {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    #mobile-menu:not(.hidden) {
+        animation: menuEntry 0.3s ease-out;
+    }
+
+    /* Transition des liens */
+    #mobile-menu a {
+        transition-property: background-color, transform;
+        transition-duration: 0.2s;
+    }
+
+    #mobile-menu a:hover {
+        transform: translateX(8px);
+    }
     </style>
 </head>
 <body class="bg-white">
    <!-- Header -->
-<header class="fixed w-full top-0 left-0 flex items-center px-4 py-3 bg-violet-200/50 backdrop-blur-lg z-50 h-[70px]">
-    <div class="flex items-center h-[60px]">
-        <img src="logo.jpg" alt="Logo" class="h-full max-w-[150px] object-contain">
+<header class="fixed w-full top-0 left-0 flex items-center justify-between px-4 py-3 bg-white/80 backdrop-blur-md shadow-sm z-50">
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+        <img src="logo.jpg" alt="Logo" class="h-12 w-auto">
+        <span class="text-xl font-bold text-violet-600">WS Corp</span>
     </div>
-    
+
     <!-- Menu Desktop -->
-    <nav id="nav-menu" class="hidden md:flex ml-auto gap-6">
-        <a href="accueil.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Accueil</a>
-        <a href="services.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Services</a>
-        <a href="projet.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Projet</a>
-        <a href="a-propos.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">A propos</a>
-        <a href="contact.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Contact</a>
+    <nav class="hidden lg:flex items-center gap-8 mr-4">
+        <a href="accueil.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            Accueil
+        </a>
+        
+        <a href="services.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            Services
+        </a>
+
+        <a href="projet.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Projets
+        </a>
+
+        <a href="a-propos.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            À propos
+        </a>
+
+        <a href="contact.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contact
+        </a>
     </nav>
 
     <!-- Burger Mobile -->
-    <button id="burger-btn" class="md:hidden p-2 ml-auto">
-        <svg height="32" width="32" viewBox="0 0 32 32" class="fill-current text-gray-800">
-            <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,22,28,22z"/>
+    <button id="burger-btn" class="lg:hidden p-2">
+        <svg class="w-8 h-8 text-gray-700 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
     </button>
 
-    <!-- Menu Mobile -->
-    <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg hidden">
-        <div class="flex flex-col py-4">
-            <a href="accueil.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Accueil</a>
-            <a href="services.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Services</a>
-            <a href="projet.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Projet</a>
-            <a href="a-propos.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">A propos</a>
-            <a href="contact.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Contact</a>
-        </div>
-    </div>
-
-        <button id="burger-btn" class="md:hidden p-2 ml-auto">
-            <svg height="32" width="32" viewBox="0 0 32 32" class="fill-current text-gray-800">
-                <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,22,28,22z"/>
+   <!-- Mobile Menu -->
+<div id="mobile-menu" class="lg:hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-sm hidden transition-opacity duration-300">
+    <div class="relative h-full w-full">
+        <!-- Bouton de fermeture -->
+        <button id="close-menu" class="absolute top-4 right-4 p-2">
+            <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </button>
-    </header>
+
+        <!-- Contenu du menu -->
+        <nav class="pt-20 px-6 h-full flex flex-col">
+            <!-- Logo mobile -->
+            <div class="mb-12 flex justify-center">
+                <img src="logo.jpg" alt="Logo" class="h-16 w-auto">
+            </div>
+
+            <!-- Liens du menu -->
+            <div class="space-y-6">
+                <a href="accueil.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
+                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </span>
+                    <span class="text-lg font-medium text-gray-700">Accueil</span>
+                </a>
+
+                <a href="services.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
+                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </span>
+                    <span class="text-lg font-medium text-gray-700">Services</span>
+                </a>
+
+                <a href="projet.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
+                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                    </span>
+                    <span class="text-lg font-medium text-gray-700">Projets</span>
+                </a>
+
+                <a href="a-propos.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
+                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </span>
+                    <span class="text-lg font-medium text-gray-700">À propos</span>
+                </a>
+
+                <a href="contact.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
+                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </span>
+                    <span class="text-lg font-medium text-gray-700">Contact</span>
+                </a>
+            </div>
+
+            <!-- Footer mobile -->
+            <div class="mt-auto pb-8 text-center">
+                <div class="flex justify-center gap-4 mb-6">
+                    <a href="#" class="p-2 bg-gray-100 rounded-full hover:bg-violet-100 transition-colors">
+                        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
+                        </svg>
+                    </a>
+                    <!-- Ajouter d'autres icônes sociales -->
+                </div>
+                <p class="text-sm text-gray-500">© 2025 WS Corporation. Tous droits réservés.</p>
+            </div>
+        </nav>
+</header>
 
     <!-- Hero Section -->
     <main class="mt-[70px]">
@@ -380,28 +492,29 @@
 
     <script>
         const burgerBtn = document.getElementById('burger-btn');
-        const navMenu = document.getElementById('nav-menu');
-        
-        burgerBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
-            navMenu.classList.toggle('flex');
-        });
-         const burgerBtn = document.getElementById('burger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     let menuOpen = false;
 
-    burgerBtn.addEventListener('click', () => {
+    // Gestion du menu mobile
+    burgerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         menuOpen = !menuOpen;
         mobileMenu.classList.toggle('hidden');
-        mobileMenu.classList.toggle('animate-slideDown');
-        
-        // Animation burger
         burgerBtn.style.transform = menuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
     });
 
-    // Fermer le menu en cliquant à l'extérieur
+    // Fermeture au clic extérieur
     document.addEventListener('click', (e) => {
-        if(!burgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        if(menuOpen && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            burgerBtn.style.transform = 'rotate(0deg)';
+            menuOpen = false;
+        }
+    });
+
+    // Adaptation automatique à la taille de l'écran
+    window.addEventListener('resize', () => {
+        if(window.innerWidth >= 1024) {
             mobileMenu.classList.add('hidden');
             burgerBtn.style.transform = 'rotate(0deg)';
             menuOpen = false;
