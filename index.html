@@ -206,6 +206,13 @@
                 <p class="text-sm text-gray-500">© 2025 WS Corporation. Tous droits réservés.</p>
             </div>
         </nav>
+        <!-- Bouton de fermeture -->
+<button id="close-menu" class="absolute top-4 right-4 p-2">
+    <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+</button>
+
 </header>
 
     <!-- Hero Section -->
@@ -491,35 +498,41 @@
     </footer>
 
     <script>
-        const burgerBtn = document.getElementById('burger-btn');
+           // Elements DOM
+    const burgerBtn = document.getElementById('burger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    let menuOpen = false;
+    const closeBtn = document.getElementById('close-menu');
 
-    // Gestion du menu mobile
+    // Fonction de fermeture explicite
+    function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        burgerBtn.style.transform = 'rotate(0deg)';
+    }
+
+    // Écouteurs d'événements
+    closeBtn.addEventListener('click', closeMenu);
+    
+    // Version corrigée du script précédent
     burgerBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        menuOpen = !menuOpen;
         mobileMenu.classList.toggle('hidden');
-        burgerBtn.style.transform = menuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+        document.body.classList.toggle('overflow-hidden');
+        burgerBtn.style.transform = mobileMenu.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(90deg)';
     });
 
     // Fermeture au clic extérieur
     document.addEventListener('click', (e) => {
-        if(menuOpen && !mobileMenu.contains(e.target)) {
-            mobileMenu.classList.add('hidden');
-            burgerBtn.style.transform = 'rotate(0deg)';
-            menuOpen = false;
+        if(!mobileMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+            closeMenu();
         }
     });
 
-    // Adaptation automatique à la taille de l'écran
-    window.addEventListener('resize', () => {
-        if(window.innerWidth >= 1024) {
-            mobileMenu.classList.add('hidden');
-            burgerBtn.style.transform = 'rotate(0deg)';
-            menuOpen = false;
-        }
+    // Fermeture avec ESC
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape') closeMenu();
     });
+</script>
     </script>
 </body>
 </html>
