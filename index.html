@@ -38,23 +38,56 @@
         width: 100%;
         left: 0;
     }
-}
+
+ @keyframes slideDown {
+        0% { transform: translateY(-20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-slideDown {
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @media (min-width: 768px) {
+        #mobile-menu {
+            display: none !important;
+        }
+    }
     </style>
 </head>
 <body class="bg-white">
-    <!-- Header -->
-    <header class="fixed w-full top-0 left-0 flex items-center px-4 py-3 bg-violet-200/50 backdrop-blur-lg z-50 h-[70px]">
-        <div class="flex items-center h-[60px]">
-            <img src="logo.jpg" alt="Logo" class="h-full max-w-[150px] object-contain">
+   <!-- Header -->
+<header class="fixed w-full top-0 left-0 flex items-center px-4 py-3 bg-violet-200/50 backdrop-blur-lg z-50 h-[70px]">
+    <div class="flex items-center h-[60px]">
+        <img src="logo.jpg" alt="Logo" class="h-full max-w-[150px] object-contain">
+    </div>
+    
+    <!-- Menu Desktop -->
+    <nav id="nav-menu" class="hidden md:flex ml-auto gap-6">
+        <a href="accueil.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Accueil</a>
+        <a href="services.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Services</a>
+        <a href="projet.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Projet</a>
+        <a href="a-propos.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">A propos</a>
+        <a href="contact.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Contact</a>
+    </nav>
+
+    <!-- Burger Mobile -->
+    <button id="burger-btn" class="md:hidden p-2 ml-auto">
+        <svg height="32" width="32" viewBox="0 0 32 32" class="fill-current text-gray-800">
+            <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,22,28,22z"/>
+        </svg>
+    </button>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg hidden">
+        <div class="flex flex-col py-4">
+            <a href="accueil.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Accueil</a>
+            <a href="services.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Services</a>
+            <a href="projet.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Projet</a>
+            <a href="a-propos.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">A propos</a>
+            <a href="contact.html" class="px-6 py-3 text-gray-800 hover:bg-violet-100">Contact</a>
         </div>
-        
-        <nav class="hidden md:flex ml-auto gap-6" id="nav-menu">
-            <a href="accueil.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Accueil</a>
-            <a href="services.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Services</a>
-            <a href="projet.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Projet</a>
-            <a href="a-propos.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">A propos</a>
-            <a href="contact.html" class="px-4 py-2 text-gray-800 hover:bg-violet-300/30 hover:text-white rounded transition-all">Contact</a>
-        </nav>
+    </div>
 
         <button id="burger-btn" class="md:hidden p-2 ml-auto">
             <svg height="32" width="32" viewBox="0 0 32 32" class="fill-current text-gray-800">
@@ -353,6 +386,27 @@
             navMenu.classList.toggle('hidden');
             navMenu.classList.toggle('flex');
         });
+         const burgerBtn = document.getElementById('burger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let menuOpen = false;
+
+    burgerBtn.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('animate-slideDown');
+        
+        // Animation burger
+        burgerBtn.style.transform = menuOpen ? 'rotate(90deg)' : 'rotate(0deg)';
+    });
+
+    // Fermer le menu en cliquant à l'extérieur
+    document.addEventListener('click', (e) => {
+        if(!burgerBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+            burgerBtn.style.transform = 'rotate(0deg)';
+            menuOpen = false;
+        }
+    });
     </script>
 </body>
 </html>
