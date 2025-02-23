@@ -1190,3 +1190,54 @@ label:has(+ input.success:focus), label:has(+ input.success) {
     transform: translateY(-5px); /* Légère élévation au survol */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre douce au survol */
 }
+
+/* Styles pour les éléments de navigation */
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem 0.8rem; /* Réduction du padding des boutons */
+    cursor: pointer;
+    font-size: var(--fs-1);
+    color: var(--dark-clr-1);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Ajout de la transition */
+}
+
+.nav-btn:hover {
+    border-radius: 4px;
+    color: var(--light-clr-1);
+    background-color: rgba(238, 130, 238, 0.284);
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+.burger {
+    display: block;
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    font-size: var(--fs-2);
+    color: var(--dark-clr-1);
+    transition: transform 0.3s ease; /* Ajout de la transition */
+}
+
+.burger:hover {
+    transform: rotate(90deg); /* Rotation au survol */
+}
+
+#nav-menu {
+    display: flex;
+    gap: 1rem; /* Réduction de l'écart entre les boutons */
+    opacity: 0; /* Initialement caché */
+    transform: translateY(-10px); /* Position initiale */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Ajout de la transition */
+}
+
+#nav-menu.active {
+    display: flex; /* Affiche le menu lorsque la classe "active" est présente */
+    opacity: 1; /* Rendre visible */
+    transform: translateY(0); /* Remettre à la position d'origine */
+}
