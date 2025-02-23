@@ -459,6 +459,32 @@ main {
 
 /* Main Projets */
 
+.projet {
+    position: relative;
+    border: 1px solid var(--dark-clr-3);
+    transition: all 0.3s ease;
+    text-align: center;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    background-size: cover; /* Pour que l'image couvre toute la section */
+    background-position: center; /* Pour centrer l'image */
+}
+
+.projet-1 {
+    background-image: url('/assets/projet1-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.projet-2 {
+    background-image: url('/assets/projet2-background.jpg'); /* Remplacez par le chemin de votre image */
+}
+
+.projet-3 {
+    background-image: url('/assets/projet3-background.jpg'); /* Remplacez par le chemin de votre image */
+}
 #liste-projets {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
