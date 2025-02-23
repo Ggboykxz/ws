@@ -19,8 +19,26 @@
             border-right: 2px solid #7E2EA0;
             animation: typing 3.5s steps(40, end), cursor .2s step-end infinite;
         }
-    .group:hover .service-divider {
+     .group:hover .group-hover\:scale-100 {
+        transform: scale(1);
+    }
+    .group:hover .group-hover\:blur-0 {
+        filter: blur(0);
+    }   
         
+@layer components {
+    .group:hover svg {
+        filter: blur(0.5px);
+        transform: translateY(-50%) scale(4);
+    }
+    .group:hover h3 {
+        color: #7E2EA0;
+    }
+    .group:hover .service-divider {
+        width: 100%;
+        left: 0;
+    }
+}
     </style>
 </head>
 <body class="bg-white">
@@ -164,33 +182,62 @@
 
 
 
-        <!-- Projets Section -->
-        <section class="bg-gray-50 py-16">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Nos Projets Phares</h2>
-                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Découvrez nos innovations qui façonnent l'avenir numérique du Gabon.
-                    </p>
+      <!-- Section Projets -->
+<section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Nos Projets Phares</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Découvrez nos innovations qui façonnent l'avenir numérique du Gabon.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Projet 1 - AfricAI -->
+            <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80 group">
+                <div class="absolute inset-0 blur-md scale-150 transition-all duration-500 group-hover:blur-0 group-hover:scale-100">
+                    <img src="/assets/sample.png" alt="AfricAI" class="w-full h-full object-cover">
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80">
-                        <div class="absolute inset-0 blur-md scale-150 group-hover:blur-0 group-hover:scale-100 transition-all duration-500">
-                            <img src="/assets/sample.png" alt="Projet" class="w-full h-full object-cover">
-                        </div>
-                        <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
-                            <h3 class="text-2xl font-bold text-white mb-2">AfricAI</h3>
-                            <p class="text-gray-200">Une IA africaine innovante, conçue pour répondre aux besoins spécifiques du continent.</p>
-                            <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
-                                En développement
-                            </button>
-                        </div>
-                    </article>
-                    <!-- Répéter pour les autres projets -->
+                <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-white mb-2">AfricAI</h3>
+                    <p class="text-gray-200 mb-4">Une IA africaine innovante, conçue pour répondre aux besoins spécifiques du continent.</p>
+                    <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
+                        En développement
+                    </button>
                 </div>
-            </div>
-        </section>
+            </article>
+
+            <!-- Projet 2 - Gabon Market -->
+            <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80 group">
+                <div class="absolute inset-0 blur-md scale-150 transition-all duration-500 group-hover:blur-0 group-hover:scale-100">
+                    <img src="/assets/sample.png" alt="Gabon Market" class="w-full h-full object-cover">
+                </div>
+                <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-white mb-2">Gabon Market</h3>
+                    <p class="text-gray-200 mb-4">La première marketplace 100% gabonaise, facilitant le commerce local.</p>
+                    <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
+                        En cours
+                    </button>
+                </div>
+            </article>
+
+            <!-- Projet 3 - Oedipeco Mobile -->
+            <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80 group">
+                <div class="absolute inset-0 blur-md scale-150 transition-all duration-500 group-hover:blur-0 group-hover:scale-100">
+                    <img src="/assets/sample.png" alt="Oedipeco Mobile" class="w-full h-full object-cover">
+                </div>
+                <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold text-white mb-2">Oedipeco Mobile</h3>
+                    <p class="text-gray-200 mb-4">Application mobile pour la plateforme e-commerce oedipeco.com.</p>
+                    <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
+                        En développement
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
 
         <!-- Statistiques -->
         <section class="container mx-auto px-4 py-16">
