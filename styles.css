@@ -22,6 +22,17 @@
     transform: translateY(0);
 }
 
+/* New Animation for Button Hover Effects */
+@keyframes buttonHover {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+button:hover {
+    animation: buttonHover 0.3s ease-in-out;
+}
+
 /* Typing Animation */
 @keyframes typing {
     from { width: 0; }
@@ -45,7 +56,7 @@
 }
 
 .group:hover .group-hover\:blur-0 {
-    filter: blur(0);
+    filter: blur(0);   
 }   
 
 /* Component Styles */
@@ -98,4 +109,25 @@
 
 #mobile-menu a:hover {
     transform: translateX(8px);
+}
+
+/* Footer Fade-in Effect */
+footer {
+    opacity: 0;
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 0.5s;
+}
+
+/* Additional Styles for Services and Projects */
+#services .scroll-animation,
+#projects .scroll-animation {
+    animation: fadeInUp 0.5s forwards;
+}
+
+#services .scroll-animation {
+    animation-delay: 0.3s;
+}
+
+#projects .scroll-animation {
+    animation-delay: 0.6s;
 }
