@@ -5,74 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WS Corporation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes cursor {
-            50% { border-color: transparent; }
-        }
-        .typing-animation {
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid #7E2EA0;
-            animation: typing 3.5s steps(40, end), cursor .2s step-end infinite;
-        }
-     .group:hover .group-hover\:scale-100 {
-        transform: scale(1);
-    }
-    .group:hover .group-hover\:blur-0 {
-        filter: blur(0);
-    }   
-        
-@layer components {
-    .group:hover svg {
-        filter: blur(0.5px);
-        transform: translateY(-50%) scale(4);
-    }
-    .group:hover h3 {
-        color: #7E2EA0;
-    }
-    .group:hover .service-divider {
-        width: 100%;
-        left: 0;
-    }
-
- @keyframes slideDown {
-        0% { transform: translateY(-20px); opacity: 0; }
-        100% { transform: translateY(0); opacity: 1; }
-    }
-
-    .animate-slideDown {
-        animation: slideDown 0.3s ease-out;
-    }
-
-    @media (min-width: 768px) {
-        #mobile-menu {
-            display: none !important;
-        }
-    }
-      /* Animation d'entrée */
-    @keyframes menuEntry {
-        0% { opacity: 0; transform: translateY(-20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
-
-    #mobile-menu:not(.hidden) {
-        animation: menuEntry 0.3s ease-out;
-    }
-
-    /* Transition des liens */
-    #mobile-menu a {
-        transition-property: background-color, transform;
-        transition-duration: 0.2s;
-    }
-
-    #mobile-menu a:hover {
-        transform: translateX(8px);
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
 </head>
 <body class="bg-white">
    <!-- Header -->
@@ -85,40 +19,11 @@
 
     <!-- Menu Desktop -->
     <nav class="hidden lg:flex items-center gap-8 mr-4">
-        <a href="accueil.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-            </svg>
-            Accueil
-        </a>
-        
-        <a href="services.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
-            Services
-        </a>
-
-        <a href="projet.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-            </svg>
-            Projets
-        </a>
-
-        <a href="a-propos.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            À propos
-        </a>
-
-        <a href="contact.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            Contact
-        </a>
+        <a href="accueil.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">Accueil</a>
+        <a href="services.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">Services</a>
+        <a href="projet.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">Projets</a>
+        <a href="a-propos.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">À propos</a>
+        <a href="contact.html" class="flex items-center gap-2 text-gray-600 hover:text-violet-600 transition-all">Contact</a>
     </nav>
 
     <!-- Burger Mobile -->
@@ -131,69 +36,25 @@
    <!-- Mobile Menu -->
 <div id="mobile-menu" class="lg:hidden fixed inset-0 z-50 bg-white/95 backdrop-blur-sm hidden transition-opacity duration-300">
     <div class="relative h-full w-full">
-        <!-- Bouton de fermeture -->
         <button id="close-menu" class="absolute top-4 right-4 p-2">
             <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
         </button>
 
-        <!-- Contenu du menu -->
         <nav class="pt-20 px-6 h-full flex flex-col">
-            <!-- Logo mobile -->
             <div class="mb-12 flex justify-center">
                 <img src="logo.jpg" alt="Logo" class="h-16 w-auto">
             </div>
 
-            <!-- Liens du menu -->
             <div class="space-y-6">
-                <a href="accueil.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
-                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                        </svg>
-                    </span>
-                    <span class="text-lg font-medium text-gray-700">Accueil</span>
-                </a>
-
-                <a href="services.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
-                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </span>
-                    <span class="text-lg font-medium text-gray-700">Services</span>
-                </a>
-
-                <a href="projet.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
-                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                        </svg>
-                    </span>
-                    <span class="text-lg font-medium text-gray-700">Projets</span>
-                </a>
-
-                <a href="a-propos.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
-                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </span>
-                    <span class="text-lg font-medium text-gray-700">À propos</span>
-                </a>
-
-                <a href="contact.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">
-                    <span class="w-8 h-8 bg-violet-600 rounded-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </span>
-                    <span class="text-lg font-medium text-gray-700">Contact</span>
-                </a>
+                <a href="accueil.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">Accueil</a>
+                <a href="services.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">Services</a>
+                <a href="projet.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">Projets</a>
+                <a href="a-propos.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">À propos</a>
+                <a href="contact.html" class="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-violet-100 transition-all">Contact</a>
             </div>
 
-            <!-- Footer mobile -->
             <div class="mt-auto pb-8 text-center">
                 <div class="flex justify-center gap-4 mb-6">
                     <a href="#" class="p-2 bg-gray-100 rounded-full hover:bg-violet-100 transition-colors">
@@ -201,281 +62,289 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
                         </svg>
                     </a>
-                    <!-- Ajouter d'autres icônes sociales -->
                 </div>
                 <p class="text-sm text-gray-500">© 2025 WS Corporation. Tous droits réservés.</p>
             </div>
         </nav>
-        <!-- Bouton de fermeture -->
-<button id="close-menu" class="absolute top-4 right-4 p-2">
-    <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-    </svg>
-</button>
-
+    </div>
+</div>
 </header>
 
-    <!-- Hero Section -->
-    <main class="mt-[70px]">
-        <section class="relative bg-[url('logo.jpg')] bg-cover bg-center text-white py-16">
-            <div class="absolute inset-0 bg-black/40 z-0"></div>
-            <div class="relative z-10 container mx-auto px-4 text-center flex flex-col gap-6">
-               <!-- Modifier le conteneur du titre -->
-<h1 class="text-4xl md:text-6xl font-bold text-violet-400 overflow-visible">
-    <span class="inline-block typing-animation-wrapper">
-        <span class="typing-animation block md:inline">
-            Revolutionnons le<br class="md:hidden"/> numérique au Gabon.
-        </span>
-    </span>
-</h1>
-                <p class="text-lg md:text-xl max-w-3xl mx-auto">
-                    W&S corporation est votre partenaire technologie pour le développement web, mobile et l'innovation numérique au Gabon.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4 mt-8">
-                    <a href="#services" class="flex items-center gap-2 bg-gray-900 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
-                        <span>Nos Services</span>
-                        <svg class="w-6 h-6" viewBox="0 -960 960 960" fill="currentColor">
-                            <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
-                        </svg>
-                    </a>
-                    <a href="#contact" class="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-full hover:bg-violet-500 hover:border-violet-500 transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                        Contactez-nous
-                    </a>
-                </div>
+<!-- Hero Section -->
+<main class="mt-[70px]">
+    <section class="scroll-animation relative bg-[url('logo.jpg')] bg-cover bg-center text-white py-16">
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="relative z-10 container mx-auto px-4 text-center flex flex-col gap-6">
+            <h1 class="text-4xl md:text-6xl font-bold text-violet-400 overflow-visible">
+                <span class="inline-block typing-animation-wrapper">
+                    <span class="typing-animation block md:inline">
+                        Revolutionnons le<br class="md:hidden"/> numérique au Gabon.
+                    </span>
+                </span>
+            </h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">
+                W&S corporation est votre partenaire technologie pour le développement web, mobile et l'innovation numérique au Gabon.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="#services" class="flex items-center gap-2 bg-gray-900 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                    <span>Nos Services</span>
+                    <svg class="w-6 h-6" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-full hover:bg-violet-500 hover:border-violet-500 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    Contactez-nous
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-                 <!-- Services Section -->
-<section class="container mx-auto px-4 py-16" id="services">
-    <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Nos Services</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Une gamme complète de services numériques pour accompagner votre transformation digitale.
-        </p>
-    </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Service 1 - Développement Web -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Développement Web</h3>
-            <p class="text-gray-600 mb-6">Création de sites web professionnels, applications web sur mesure et plateformes adaptées à vos besoins spécifiques.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 2 - Applications Mobiles -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Applications Mobiles</h3>
-            <p class="text-gray-600 mb-6">Conception et développement d'applications mobiles natives et hybrides pour Android et iOS.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 3 - E-commerce -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="m40-240 20-80h220l-20 80H40Zm80-160 20-80h260l-20 80H120Zm623 240 20-160 29-240 10-79-59 479ZM240-80q-33 0-56.5-23.5T160-160h583l59-479H692l-11 85q-2 17-15 26.5t-30 7.5q-17-2-26.5-14.5T602-564l9-75H452l-11 84q-2 17-15 27t-30 8q-17-2-27-15t-8-30l9-74H220q4-34 26-57.5t54-23.5h80q8-75 51.5-117.5T550-880q64 0 106.5 47.5T698-720h102q36 1 60 28t19 63l-60 480q-4 30-26.5 49.5T740-80H240Zm220-640h159q1-33-22.5-56.5T540-800q-35 0-55.5 21.5T460-720Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">E-commerce</h3>
-            <p class="text-gray-600 mb-6">Développement de boutiques en ligne performantes, intégration de paiements sécurisés et optimisation de l'expérience utilisateur.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 4 - Cybersécurité -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Cybersécurité</h3>
-            <p class="text-gray-600 mb-6">Protection des données, audits de sécurité, solutions contre les cybermenaces et sensibilisation aux bonnes pratiques.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 5 - IA & Automatisation -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M240-80v-172q-57-52-88.5-121.5T120-520q0-150 105-255t255-105q125 0 221.5 73.5T827-615l52 205q5 19-7 34.5T840-360h-80v120q0 33-23.5 56.5T680-160h-80v80h-80v-160h160v-200h108l-38-155q-23-91-98-148t-172-57q-116 0-198 81t-82 197q0 60 24.5 114t69.5 96l26 24v208h-80Zm254-360Zm-14 120q17 0 28.5-11.5T520-360q0-17-11.5-28.5T480-400q-17 0-28.5 11.5T440-360q0 17 11.5 28.5T480-320Zm-30-128h61q0-25 6.5-40.5T544-526q18-20 35-40.5t17-53.5q0-42-32.5-71T483-720q-40 0-72.5 23T365-637l55 23q7-22 24.5-35.5T483-663q22 0 36.5 12t14.5 31q0 21-12.5 37.5T492-549q-20 21-31 42t-11 59Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">IA & Automatisation</h3>
-            <p class="text-gray-600 mb-6">Développement de solutions d'intelligence artificielle et automatisation des processus métiers.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 6 - Production Audiovisuelle -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M480-360q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T520-480q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480q0 17 11.5 28.5T480-440ZM200-120q-33 0-56.5-23.5T120-200v-160h80v160h160v80H200Zm400 0v-80h160v-160h80v160q0 33-23.5 56.5T760-120H600ZM120-600v-160q0-33 23.5-56.5T200-840h160v80H200v160h-80Zm640 0v-160H600v-80h160q33 0 56.5 23.5T840-760v160h-80Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Production Audiovisuelle</h3>
-            <p class="text-gray-600 mb-6">Création de contenu vidéo professionnel : motion design, tournage, montage et post-production.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 7 - Hébergement Web -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M200-160v-160h-80v-80h80v-80h-80v-80h80v-120l120-120 80 80 81-80 80 80 80-80 120 120v120h79v80h-79v80h79v80h-79v160H200Zm80-400h80v-87l-40-40-40 40v87Zm160 0h80v-87l-40-40-40 40v87Zm161 0h79v-87l-40-40-39 39v88ZM280-400h80v-80h-80v80Zm160 0h80v-80h-80v80Zm161 0h79v-80h-79v80ZM280-240h80v-80h-80v80Zm160 0h80v-80h-80v80Zm161 0h79v-80h-79v80Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Hébergement Web</h3>
-            <p class="text-gray-600 mb-6">Solutions d'hébergement fiables, sécurisées et optimisées pour la performance des sites et applications.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-
-        <!-- Service 8 - Support Informatique -->
-        <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
-            <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
-                <path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440Zm-80-280q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/>
-            </svg>
-            <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Support Informatique</h3>
-            <p class="text-gray-600 mb-6">Assistance technique, maintenance préventive et corrective pour assurer le bon fonctionnement de vos outils numériques.</p>
-            <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
-        </article>
-    </div>
-</section>
-
-
-
-      <!-- Section Projets -->
-<section class="bg-gray-50 py-16">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Nos Projets Phares</h2>
+    <!-- Services Section -->
+    <section class="container mx-auto px-4 py-16" id="services">
+        <div class="scroll-animation text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Nos Services</h2>
             <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                Découvrez nos innovations qui façonnent l'avenir numérique du Gabon.
+                Une gamme complète de services numériques pour accompagner votre transformation digitale.
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Projet 1 - AfricAI -->
-            <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80 group">
-                <div class="absolute inset-0 blur-md scale-150 transition-all duration-500 group-hover:blur-0 group-hover:scale-100">
-                    <img src="/assets/sample.png" alt="AfricAI" class="w-full h-full object-cover">
-                </div>
-                <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold text-white mb-2">AfricAI</h3>
-                    <p class="text-gray-200 mb-4">Une IA africaine innovante, conçue pour répondre aux besoins spécifiques du continent.</p>
-                    <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
-                        En développement
-                    </button>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Service 1 - Développement Web -->
+            <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
+                <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
+                    <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
+                </svg>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Développement Web</h3>
+                <p class="text-gray-600 mb-6">Création de sites web professionnels, applications web sur mesure et plateformes adaptées à vos besoins spécifiques.</p>
+                <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
             </article>
 
-            <!-- Projet 2 - Gabon Market -->
-            <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80 group">
-                <div class="absolute inset-0 blur-md scale-150 transition-all duration-500 group-hover:blur-0 group-hover:scale-100">
-                    <img src="/assets/sample.png" alt="Gabon Market" class="w-full h-full object-cover">
-                </div>
-                <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold text-white mb-2">Gabon Market</h3>
-                    <p class="text-gray-200 mb-4">La première marketplace 100% gabonaise, facilitant le commerce local.</p>
-                    <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
-                        En cours
-                    </button>
-                </div>
+            <!-- Service 2 - Applications Mobiles -->
+            <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
+                <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
+                    <path d="M280-40q-33 0-56.5-23.5T200-120v-720q0-33 23.5-56.5T280-920h400q33 0 56.5 23.5T760-840v720q0 33-23.5 56.5T680-40H280Zm0-120v40h400v-40H280Zm0-80h400v-480H280v480Zm0-560h400v-40H280v40Zm0 0v-40 40Zm0 640v40-40Z"/>
+                </svg>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Applications Mobiles</h3>
+                <p class="text-gray-600 mb-6">Conception et développement d'applications mobiles natives et hybrides pour Android et iOS.</p>
+                <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
             </article>
 
-            <!-- Projet 3 - Oedipeco Mobile -->
-            <article class="relative overflow-hidden rounded-xl bg-white shadow-lg h-80 group">
-                <div class="absolute inset-0 blur-md scale-150 transition-all duration-500 group-hover:blur-0 group-hover:scale-100">
-                    <img src="/assets/sample.png" alt="Oedipeco Mobile" class="w-full h-full object-cover">
-                </div>
-                <div class="relative p-6 text-center bg-black/40 backdrop-blur-sm h-full flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold text-white mb-2">Oedipeco Mobile</h3>
-                    <p class="text-gray-200 mb-4">Application mobile pour la plateforme e-commerce oedipeco.com.</p>
-                    <button class="mt-4 bg-violet-600/80 text-white px-6 py-2 rounded-full mx-auto hover:bg-violet-600 transition-all">
-                        En développement
-                    </button>
-                </div>
+            <!-- Service 3 - E-commerce -->
+            <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
+                <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
+                    <path d="m40-240 20-80h220l-20 80H40Zm80-160 20-80h260l-20 80H120Zm623 240 20-160 29-240 10-79-59 479ZM240-80q-33 0-56.5-23.5T160-160h583l59-479H692l-11 85q-2 17-15 26.5t-30 7.5q-17-2-26.5-14.5T602-564l9-75H452l-11 84q-2 17-15 27t-30 8q-17-2-27-15t-8-30l9-74H220q4-34 26-57.5t54-23.5h80q8-75 51.5-117.5T550-880q64 0 106.5 47.5T698-720h102q36 1 60 28t19 63l-60 480q-4 30-26.5 49.5T740-80H240Zm220-640h159q1-33-22.5-56.5T540-800q-35 0-55.5 21.5T460-720Z"/>
+                </svg>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">E-commerce</h3>
+                <p class="text-gray-600 mb-6">Développement de boutiques en ligne performantes, intégration de paiements sécurisés et optimisation de l'expérience utilisateur.</p>
+                <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
+            </article>
+
+            <!-- Service 4 - Cybersécurité -->
+            <article class="group p-6 text-center hover:bg-gray-50 rounded-xl transition-all duration-300 relative h-[400px] flex flex-col items-center justify-center">
+                <svg class="w-12 h-12 mx-auto mb-8 text-gray-600 group-hover:text-violet-600 transition-all duration-300 group-hover:scale-150 group-hover:-translate-y-1/2 group-hover:opacity-20" viewBox="0 -960 960 960">
+                    <path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Z"/>
+                </svg>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2 group-hover:text-violet-600 transition-colors">Cybersécurité</h3>
+                <p class="text-gray-600 mb-6">Protection des données, audits de sécurité, solutions contre les cybermenaces et sensibilisation aux bonnes pratiques.</p>
+                <div class="w-16 h-1 bg-violet-600 mx-auto mt-auto group-hover:w-full group-hover:absolute group-hover:bottom-0 group-hover:left-0 transition-all duration-300"></div>
             </article>
         </div>
-    </div>
-</section>
+    </section>
 
-
-        <!-- Statistiques -->
-        <section class="container mx-auto px-4 py-16">
-            <div class="flex justify-around mb-8">
-                <div class="text-center">
-                    <h3 class="text-6xl font-bold text-violet-600">100+</h3>
-                    <p class="text-xl text-gray-600">Projets Réalisés</p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-6xl font-bold text-violet-600">50+</h3>
-                    <p class="text-xl text-gray-600">Clients Satisfaits</p>
-                </div>
-            </div>
-            <img src="/assets/sample.png" alt="Stats" class="w-full h-48 object-cover rounded-xl">
-        </section>
-
-        <!-- Vision -->
-        <section class="bg-gray-50 py-16">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Notre vision</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    W&S corporation est née de l'ambition de révolutionner le paysage numérique au Gabon. Notre mission est de propulser
-                    <button class="text-violet-600 font-bold hover:underline">lire plus</button>
-                </p>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="container mx-auto px-4 py-16" id="contact">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Contactez-nous</h2>
+    <!-- Projects Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="scroll-animation text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Nos Projets Phares</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    Discutons de vos projets et voyons comment nous pouvons vous aider à les réaliser.
+                    Découvrez nos innovations qui façonnent l'avenir numérique du Gabon.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="text-center p-6">
-                    <svg class="w-12 h-12 mx-auto text-violet-600 mb-4" viewBox="0 -960 960 960">
-                        <path d="M320-240 80-480l240-240 57 57-184 184 183 183-56 56Zm320 0-57-57 184-184-183-183 56-56 240 240-240 240Z"/>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Email</h3>
-                    <p class="text-gray-600">contact@exemple.com</p>
-                </div>
-                <div class="text-center p-6">
-                    <svg class="w-12 h-12 mx-auto text-violet-600 mb-4" viewBox="0 -960 960 960">
-                        <path d="M440-120v-80h320v-284q0-117-81.5-198.5T480-764q-117 0-198.5 81.5T200-484v244h-40q-33 0-56.5-23.5T80-320v-80q0-21 10.5-39.5T120-469l3-53q8-68 39.5-126t79-101q47.5-43 109-67T480-840q68 0 129 24t109 66.5Q766-707 797-649t40 126l3 52q19 9 29.5 27t10.5 38v92q0 20-10.5 38T840-249v49q0 33-23.5 56.5T760-120H440Zm-80-280q-17 0-28.5-11.5T320-440q0-17 11.5-28.5T360-480q17 0 28.5 11.5T400-440q0 17-11.5 28.5T360-400Zm240 0q-17 0-28.5-11.5T560-440q0-17 11.5-28.5T600-480q17 0 28.5 11.5T640-440q0 17-11.5 28.5T600-400Zm-359-62q-7-106 64-182t177-76q89 0 156.5 56.5T720-519q-91-1-167.5-49T435-698q-16 80-67.5 142.5T241-462Z"/>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Téléphone</h3>
-                    <p class="text-gray-600">+241 01 23 45 67</p>
-                </div>
-                <div class="text-center p-6">
-                    <svg class="w-12 h-12 mx-auto text-violet-600 mb-4" viewBox="0 -960 960 960">
-                        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Adresse</h3>
-                    <p class="text-gray-600">Libreville, Gabon</p>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 scroll-animation">
+                <!-- Projet 1 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/sample.png" alt="Projet 1" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-violet-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Plateforme E-learning</h3>
+                        <p class="text-gray-600 mb-4">Une solution complète pour l'apprentissage en ligne, adaptée aux besoins spécifiques du Gabon.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">React</span>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 2 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/sample.png" alt="Projet 2" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-violet-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Application de Santé</h3>
+                        <p class="text-gray-600 mb-4">Application mobile pour la téléconsultation et le suivi médical à distance.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">Flutter</span>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">Firebase</span>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">WebRTC</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Projet 3 -->
+                <article class="bg-white rounded-xl overflow-hidden shadow-lg group">
+                    <div class="relative overflow-hidden">
+                        <img src="assets/sample.png" alt="Projet 3" class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-violet-600/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Système de Paiement</h3>
+                        <p class="text-gray-600 mb-4">Solution de paiement mobile adaptée au marché gabonais et africain.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">Spring Boot</span>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">PostgreSQL</span>
+                            <span class="px-3 py-1 bg-violet-100 text-violet-600 rounded-full text-sm">Docker</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="container mx-auto px-4 py-16">
+        <div class="scroll-animation flex flex-wrap justify-around mb-8">
+            <!-- Stat 1 -->
+            <div class="text-center p-6">
+                <div class="text-4xl font-bold text-violet-600 mb-2">100+</div>
+                <div class="text-gray-600">Projets Réalisés</div>
             </div>
 
-            <form class="max-w-2xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block mb-2 font-medium">Nom</label>
-                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-violet-600">
-                    </div>
-                    <div>
-                        <label class="block mb-2 font-medium">Email</label>
-                        <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-violet-600">
-                    </div>
-                    <div class="md:col-span-2">
-                        <label class="block mb-2 font-medium">Message</label>
-                        <textarea rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-violet-600"></textarea>
-                    </div>
-                    <button class="md:col-span-2 bg-violet-600 text-white px-8 py-3 rounded-lg  transition-all duration-300 hover:bg-violet-700 hover:scale-[1.02]">
-                        Envoyer
+            <!-- Stat 2 -->
+            <div class="text-center p-6">
+                <div class="text-4xl font-bold text-violet-600 mb-2">50+</div>
+                <div class="text-gray-600">Clients Satisfaits</div>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="text-center p-6">
+                <div class="text-4xl font-bold text-violet-600 mb-2">15+</div>
+                <div class="text-gray-600">Experts Passionnés</div>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="text-center p-6">
+                <div class="text-4xl font-bold text-violet-600 mb-2">24/7</div>
+                <div class="text-gray-600">Support Client</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="bg-gray-50 py-16">
+        <div class="scroll-animation container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Notre Vision</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                Nous aspirons à être le catalyseur de la transformation numérique au Gabon, en créant des solutions innovantes qui propulsent les entreprises vers l'avenir.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-violet-600" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="m421-298 198-198q13-13 13-32t-13-32l-99-99q-13-13-32-13t-32 13L258-461q-13 13-13 32t13 32l99 99q13 13 32 13t32-13Zm39 178q-82 0-155-31.5t-127.5-86Q122-293 90.5-366T59-521q0-83 31.5-156t86-127Q232-859 305-890.5T460-922q83 0 156 31.5T743-804q55 55 86.5 128T861-521q0 82-31.5 155T743-238.5q-55 55-128 86.5T460-120Zm0-60q142 0 241-99.5T800-521q0-142-99-241t-241-99q-141 0-240.5 99T120-521q0 141 99.5 240.5T460-180Zm0-341Z"/>
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Innovation</h3>
+                    <p class="text-gray-600">Nous repoussons constamment les limites technologiques pour créer des solutions d'avant-garde.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-violet-600" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="M480-489q-74 0-124.5-50.5T305-664q0-74 50.5-124.5T480-839q74 0 124.5 50.5T655-664q0 74-50.5 124.5T480-489Zm0-60q45 0 74.5-29.5T584-664q0-45-29.5-74.5T480-768q-45 0-74.5 29.5T376-664q0 45 29.5 74.5T480-549Zm0 449q-146 0-266-81.5T40-401q54-137 174.5-218.5T480-701q146 0 266 81.5T920-401q-54 137-174.5 218.5T480-101Zm0-299Zm0 239q113 0 207.5-65T832-401q-50-110-144.5-175T480-641q-113 0-207.5 65T128-401q50 110 144.5 175T480-161Z"/>
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Transparence</h3>
+                    <p class="text-gray-600">Nous privilégions une communication claire et honnête avec nos clients et partenaires.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-lg">
+                    <svg class="w-12 h-12 mx-auto mb-4 text-violet-600" viewBox="0 -960 960 960" fill="currentColor">
+                        <path d="m438-338 226-226-57-57-169 169-84-84-57 57 141 141Zm42 258q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q97-30 162-118.5T718-480H480v-315l-240 90v207q0 7 2 18h238v316Zm0-316Z"/>
+                    </svg>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Excellence</h3>
+                    <p class="text-gray-600">Nous nous engageons à fournir des solutions de la plus haute qualité à nos clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container mx-auto px-4 py-16" id="contact">
+        <div class="scroll-animation text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-violet-600 mb-4">Contactez-nous</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Prêt à démarrer votre projet ? Contactez-nous pour discuter de vos besoins et obtenir un devis personnalisé.
+            </p>
+        </div>
+        <div class="max-w-4xl mx-auto">
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-600 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-600 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-600 focus:border-transparent">
+                </div>
+                <div>
+                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Sujet</label>
+                    <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-600 focus:border-transparent">
+                </div>
+                <div class="md:col-span-2">
+                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-violet-600 focus:border-transparent"></textarea>
+                </div>
+                <div class="md:col-span-2 text-center">
+                    <button type="submit" class="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-violet-600 hover:bg-violet-700 transition-colors">
+                        Envoyer le message
                     </button>
                 </div>
             </form>
-        </section>
-   
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="inline-block p-3 bg-violet-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-violet-600" viewBox="0 -960 960 960" fill="currentColor">
+                            <path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q-122-112-181-203.5T240-552q0-109 69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">Adresse</h3>
+                    <p class="mt-2 text-gray-600">Libreville, Gabon</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block p-3 bg-violet-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-violet-600" viewBox="0 -960 960 960" fill="currentColor">
+                            <path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h140q14 0 24.5 9.5T340-806l27 126q2 14-.5 25.5T351-634L261-544q26 44 55 82t64 72q37 38 78 69.5t86 55.5l89-92q9-9 20.5-13t24.5-2l119 26q15 3 25 15t10 28v135q0 18-12 30t-30 12Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">Téléphone</h3>
+                    <p class="mt-2 text-gray-600">+241 XX XX XX XX</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-block p-3 bg-violet-100 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-violet-600" viewBox="0 -960 960 960" fill="currentColor">
+                            <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900">Email</h3>
+                    <p class="mt-2 text-gray-600">contact@wscorp.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -528,4 +397,3 @@
     </footer>
 </main>
 </html>
-   
